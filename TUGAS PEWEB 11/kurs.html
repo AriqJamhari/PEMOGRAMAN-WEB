@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kurs Rupiah</title>
+</head>
+<style>
+    table, th, td {
+      border:1px solid black;
+      border-collapse: collapse;
+    }
+</style>
+<body>
+    <fieldset>
+        <legend>Kurs Rupiah - Mata Uang Asing</legend>
+        <table style="width: 100%;">
+            <tr>
+                <th>Masukkan Nilai</th>
+                <th>Valas</th>
+                <th>Nilai Rupiah</th>
+            </tr>
+            <tr>
+                <td><input id="nilai" style="width: 97%;" type="number" oninput="konversiKurs()"></td>
+                <td>
+                    <select name="valas" id="valas" style="width: 100%;" onchange="konversiKurs()">
+                        <option value="us">Dollar US</option>
+                        <option value="sg">Dollar SG</option>
+                        <option value="rm">Ringgit</option>
+                        <option value="yen">Yen</option>
+                        <option value="euro">Euro</option>
+                        <option value="riyal">Riyal</option>
+                    </select>
+                </td>
+                <td><span id="hasil">0</span></td>
+            </tr>
+        </table>
+    </fieldset>
+    <script>
+        // Nilai tukar untuk masing-masing mata uang
+        const kurs = {
+            us: 9915,
+            sg: 13472,
+            rm: 874,
+            yen: 120, 
+            euro: 15888,
+            riyal: 3592
+        };
+
+        // Fungsi untuk mengonversi mata uang
+        function konversiKurs() {
+            // Ambil nilai input dari pengguna dan jenis valas yang dipilih
+            const nilai = document.getElementById('nilai').value;
+            const valas = document.getElementById('valas').value;
+
+            if (nilai && nilai > 0) {
+                // Konversi nilai ke Rupiah berdasarkan kurs yang dipilih
+                const rupiah = nilai * kurs[valas];
+                document.getElementById('hasil').innerText = rupiah.toLocaleString();
+            } else {
+                // Jika input kosong
+                document.getElementById('hasil').innerText = '0';
+            }
+        }
+    </script>
+</body>
+</html>

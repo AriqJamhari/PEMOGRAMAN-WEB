@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tiket Pemesanan</title>
+</head>
+<body>
+    <h1>Tiket Pesawat Garuda Indonesia</h1>
+    <form id="formPesanTiket">
+        <label for="nama">Nama Pelanggan : 
+            <input type="text" id="nama" maxlength="30" required>
+        </label>
+        <br><br>
+        <label for="email">Email : 
+            <input type="email" id="email" required>
+        </label>
+        <br><br>
+        <label for="jam">Jam Keberangkatan : 
+            <input type="time" id="jam" required>
+        </label>
+        <br><br>
+        <label for="tujuan">Tujuan Keberangkatan : 
+            <input type="text" id="tujuan" required>
+        </label>
+        <br><br>
+        <label for="jumlah_tiket">Jumlah Tiket : 
+            <input type="number" id="jumlah_tiket" max="10" required>
+        </label>
+        <br><br>
+        <input type="button" value="Pesan" onclick="pesanTiket()">
+    </form>
+
+    <div id="hasil"></div>
+
+    <script>
+        function pesanTiket() {
+            // input form tiket
+            const nama = document.getElementById('nama').value;
+            const email = document.getElementById('email').value;
+            const jam = document.getElementById('jam').value;
+            const tujuan = document.getElementById('tujuan').value;
+            const jumlahTiket = document.getElementById('jumlah_tiket').value;
+
+            // alert jika form kosong
+            if (!nama || !email || !jam || !tujuan || !jumlahTiket) {
+                alert('kalo ga ada duit mending gausah mesen der');
+                return;
+            }
+
+            // output hasil
+            const hasilDiv = document.getElementById('hasil');
+            hasilDiv.innerHTML = `
+                <h3>Detail Pemesanan Tiket</h3>
+                <p><strong>Nama Pelanggan:</strong> ${nama}</p>
+                <p><strong>Email:</strong> ${email}</p>
+                <p><strong>Jam Keberangkatan:</strong> ${jam}</p>
+                <p><strong>Tujuan Keberangkatan:</strong> ${tujuan}</p>
+                <p><strong>Jumlah Tiket:</strong> ${jumlahTiket}</p>
+            `;
+        }
+    </script>
+</body>
+</html>

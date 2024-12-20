@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biaya Parkir</title>
+</head>
+<body>
+    
+    <label for="jam_masuk">Jam Masuk</label>
+    <input type="time" name="jam_masuk" id="jam_masuk" />
+    <br /><br />
+
+    <label for="jam_keluar">Jam Keluar</label>
+    <input type="time" name="jam_keluar" id="jam_keluar" />
+    <br /><br />
+
+    <button onclick="hitungBiayaParkir()">Hitung</button>
+
+    <p>Biaya parkir: <span id="Biaya_Parkir"></span></p>
+
+    <script src="./parkir.js"></script>
+</body>
+</html>

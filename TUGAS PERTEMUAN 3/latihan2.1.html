@@ -1,0 +1,138 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Showroom sport car Ramones</title>
+    <style>
+      fieldset {
+        margin: 30px 150px 20px 150px;
+      }
+      .nav {
+        /* display: flex; */
+        /* justify-content: space-evenly; */
+      }
+      .container {
+        display: flex;
+        /* justify-content: space-evenly; */
+      }
+      .isi {
+        padding: 0 200px;
+      }
+      .gambar {
+        width: 25%;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div>
+      <fieldset>
+        <div class="nav">
+          <a href="#">Home</a>
+          <a href="#">Generate Link</a>
+          <a href="#">Transaction History</a>
+          <a href="#">Policy</a>
+          <a href="#">Log out</a>
+        </div>
+      </fieldset>
+    </div>
+    <div>
+      <form action="latihan2.html" method="get">
+        <div class="container">
+          <div class="gambar">
+            <img
+              src="Bugatti-Veyron-Super-Sport.webp" width="100%"
+              alt="tes cuy"
+            />
+            <br /><br />
+            <button type="button">Upload Image</button>
+          </div>
+          <div class="isi">
+            <label for="product">Product Name:</label>
+            <input
+              type="text"
+              name="product"
+              id="product"
+              placeholder="Name Product"
+            />
+            <br /><br />
+            <label for="desc">Description:</label>
+            <textarea
+              name="desc"
+              id="desc"
+              cols="24"
+              rows="1"
+              maxlength="400"
+            ></textarea>
+            <br /><br />
+            <label for="accnumb">Account Number:</label>
+            <input
+              type="tel"
+              name="accnumb"
+              id="accnumb"
+              minlength="11"
+              maxlength="14"
+              placeholder="Your Account Number"
+            />
+            <br /><br />
+            <label for="bank">Bank:</label>
+            <select name="bank" id="bank">
+              <option value="">...</option>
+              <option value="bni">BNI</option>
+              <option value="bri">BRI</option>
+              <option value="hsbc">HSBC</option>
+            </select>
+            <br /><br />
+            <label for="acchold">Account Holder:</label>
+            <input
+              type="text"
+              name="acchold"
+              id="acchold"
+              placeholder="Name Here"
+            />
+            <br /><br />
+            <label for="trx">Transaction:</label>
+            <input
+              type="number"
+              name="trx"
+              id="trx"
+              min="1"
+              max="3"
+            />
+            <p style="font-size: small">
+              *if the transaction is for 3 persons, choose 3 from the drop-down
+              list
+            </p>
+            <input type="checkbox" name="sendEmail" id="sendEmail" />
+            <label for="sendEmail">Send to Email</label>
+            <br />
+            <input type="checkbox" name="sendPhone" id="sendPhone" />
+            <label for="sendPhone">Send to Mobile Phone</label>
+            <br /><br />
+            <label for="phone">Send to Mobile Phone:</label>
+            <input
+              type="tel"
+              name="phone"
+              id="phoneInput"
+              placeholder="08123456789"
+              minlength="11"
+              maxlength="14"
+            />
+            <br /><br />
+            <label for="email">Send to Email:</label>
+            <input
+              type="email"
+              name="email"
+              id="emailInput"
+              placeholder="xyz@gmail.co.id"
+            />
+            <br /><br />
+            <button type="submit">Confirm</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat App</title>
+    <style>
+        .container {
+            border: 1px solid black;
+            height: 523px;
+            width: 400px;
+        }
+        #message {
+            height: 500px;
+            width: 400px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="pesan" id="message"></div>
+        <input type="text" id="chat" placeholder="Masukkan Pesan Kamu...">
+        <button onclick="newchat()">Kirim Pesan</button>
+    </div>
+
+    <script>
+        function newchat(){
+            let message = document.getElementById('message')
+            let chat = document.getElementById('chat')
+            
+            let chatElement = document.createElement('div')
+            chatElement.textContent= chat.value
+            message.appendChild(chatElement)
+            chat.value = ""    
+        }
+    </script>
+</body>
+</html>

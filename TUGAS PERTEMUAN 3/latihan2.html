@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Showroom sport car Ramones</title>
+    <style>
+      fieldset {
+        margin: 30px 150px 20px 150px;
+      }
+      .nav {
+        /* display: flex; */
+        /* justify-content: space-evenly; */
+      }
+      .container {
+        display: flex;
+        /* justify-content: space-evenly; */
+      }
+      img {
+        width: 80%;
+        border: 2px solid black;
+      }
+      .gambar {
+        width: 30%;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <fieldset>
+        <div class="nav">
+          <a href="index1.html">Home</a>
+          <a href="#">Generate Link</a>
+          <a href="#">Transaction History</a>
+          <a href="#">Policy</a>
+          <a href="#">Log out</a>
+        </div>
+      </fieldset>
+    </div>
+    <div>
+      <div class="container">
+        <div class="gambar">
+          <img
+            src="Bugatti-Veyron-Super-Sport.webp"
+            alt="Bugatti-Veyron-Super-Sport"
+          />
+        </div>
+        <div>
+          <script>
+            const urlParams = new URLSearchParams(window.location.search);
+            const product = urlParams.get("product");
+            const desc = urlParams.get("desc");
+
+            document.write(`<p>Name Product: Bugatti </p>`);
+            document.write(`<p>Description: veyron series </p>`);
+          </script>
+          <br /><br />
+          <p>Total Amount: IDR 10.000.000.000</p>
+          <p>Pay to: 082111592656</p>
+          <label for="payType">Payment Type: </label>
+          <select name="payType" id="payType">
+            <option value=""></option>
+            <option value="debit">Visa Debit</option>
+            <option value="credit">Credit</option>
+            <option value="paylater">Paylater</option>
+          </select>
+          <br /><br />
+          <label for="accnumb">Account No: </label>
+          <input
+            type="tel"
+            name="accnumb"
+            id="accnumb"
+            minlength="11"
+            maxlength="14"
+            placeholder="Your Account No"
+          />
+          <br /><br />
+          <input type="checkbox" name="sendPhone" id="sendPhone" />
+          <label for="sendPhone">Send to Mobile Phone</label>
+          <br />
+          <input type="checkbox" name="sendEmail" id="sendEmail" />
+          <label for="sendEmail">Email me copy of transaction</label>
+          <label for="sendPhone">Send to Mobile Phone</label>
+          <br /><br />
+          <label for="phone">Send to Mobile Phone:</label>
+          <input
+            type="tel"
+            name="phone"
+            id="phoneInput"
+            placeholder="08123456789"
+            minlength="11"
+            maxlength="14"
+          />
+          <br /><br />
+          <label for="email">Send to Email:</label>
+          <input
+            type="email"
+            name="email"
+            id="emailInput"
+            placeholder="xyz@gmail.co.id"
+          />
+          <br /><br />
+          <button type="submit">Pay using Paypal</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

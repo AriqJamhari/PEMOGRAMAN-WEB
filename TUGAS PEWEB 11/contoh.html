@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tiket Pemesanan</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">Tiket Pesawat Garuda Indonesia</h1>
+        <form id="formPesanTiket" class="bg-white p-4 rounded shadow-sm" onsubmit="pesanTiket(event)">
+            <fieldset>
+                <legend class="mb-3">Formulir Pemesanan Tiket</legend>
+                <div class="mb-3">
+                    <label for="nama" class="form-label">Nama Pelanggan:</label>
+                    <input type="text" id="nama" class="form-control" maxlength="30" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email:</label>
+                    <input type="email" id="email" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                    <label for="jam" class="form-label">Jam Keberangkatan:</label>
+                    <input type="time" id="jam" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                    <label for="tujuan" class="form-label">Tujuan Keberangkatan:</label>
+                    <input type="text" id="tujuan" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                    <label for="jumlah_tiket" class="form-label">Jumlah Tiket:</label>
+                    <input type="number" id="jumlah_tiket" class="form-control" min="1" max="10" required>
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Pesan</button>
+            </fieldset>
+        </form>
+
+        <div id="hasil" class="mt-4"></div>
+    </div>
+
+    <script>
+        function pesanTiket(event) {
+            event.preventDefault(); // Mencegah reload halaman
+
+            const nama = document.getElementById('nama').value;
+            const email = document.getElementById('email').value;
+            const jam = document.getElementById('jam').value;
+            const tujuan = document.getElementById('tujuan').value;
+            const jumlahTiket = parseInt(document.getElementById('jumlah_tiket').value, 10);
+
+            if (!nama || !email || !jam || !tujuan || jumlahTiket <= 0) {
+                alert('Lengkapin Der!!');
+                return;
+            }
+
+            const hasilDiv = document.getElementById('hasil');
+            hasilDiv.innerHTML = `
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Detail Pemesanan Tiket</h5>
+                        <p class="card-text"><strong>Nama Pelanggan:</strong> ${nama}</p>
+                        <p class="card-text"><strong>Email:</strong> ${email}</p>
+                        <p class="card-text"><strong>Jam Keberangkatan:</strong> ${jam}</p>
+                        <p class="card-text"><strong>Tujuan Keberangkatan:</strong> ${tujuan}</p>
+                        <p class="card-text"><strong>Jumlah Tiket:</strong> ${jumlahTiket}</p>
+                    </div>
+                </div>
+            `;
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
